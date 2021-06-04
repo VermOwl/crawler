@@ -1,0 +1,13 @@
+ALLOWED_HOSTS=*
+DEBUG=True
+SECRET_KEY=#6g#m#x)p7315jc#)5ytb)8d74q0!5_h@oyf=h!8$k=+!-jd=i
+
+POSTGRES_USER=crawler
+POSTGRES_DB=crawler_db
+POSTGRES_PASSWORD=met31415
+POSTGRES_PORT=5477
+POSTGRES_SSL_MODE=disable
+PGDATA=/var/lib/postgresql/data/pgdata
+
+MEMCACHED_HOST=memcached
+MEMCACHED_PORT=11211

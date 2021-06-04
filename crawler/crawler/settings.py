@@ -25,7 +25,7 @@ SECRET_KEY = 'a^s(e(cqq6ytg5@!)q3nv-rcj=m456zmjyn**y8*#j$2xce#s('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'questions.apps.QuestionsConfig',
+    'equipments.apps.EquipmentsConfig',
+    'factory.apps.FactoryConfig',
+    'answers.apps.AnswersConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -73,13 +78,23 @@ WSGI_APPLICATION = 'crawler.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "crawler_db",
+        "USER": "crawler",
+        "PASSWORD": "met31415",
+        "HOST": "localhost",
+        "PORT": "5476",
+        "OPTIONS": {"sslmode": "disable"},
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

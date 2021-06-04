@@ -1,0 +1,11 @@
+version: '3'
+services:
+  crawler_postgres:
+    image: library/postgres:12
+    env_file: env
+    volumes:
+      - crawler_postgres:/var/lib/postgresql/data
+    ports:
+      - 5476:5432
+volumes:
+  crawler_postgres:
